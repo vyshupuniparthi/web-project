@@ -1,6 +1,6 @@
 $(function(){
     console.log("Jquery Running");
-    // toastr.success('Toastr Running')
+    //toastr.success('Toastr Running');
 
 
     // Know details about current logged on user, allows us to talk to it rather than directly
@@ -86,7 +86,7 @@ $(function(){
             }
         })
         .fail(function() {
-            //alert( "error" );
+            alert( "error" );
         })
         .always(function() {
             //alert( "finished" );
