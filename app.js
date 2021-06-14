@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api', usersRouter);
 app.post("/register",(req,res)=>{
+    // var response = {success: false, message: 'Login Failed', user: null };
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
@@ -45,11 +46,10 @@ app.post("/register",(req,res)=>{
         }
         console.log("Record Inserted Successfully");
     });
-  
+    // response.message = 'Login Successful';
     return res.redirect("/welcome");
-  
-  })
-  app.get("/welcome", function(req,res){
+})
+app.get("/welcome", function(req,res){
     const fullFilePath = __dirname + "/public/welcome.html";
     res.sendFile(fullFilePath);
 })
