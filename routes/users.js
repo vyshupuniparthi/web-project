@@ -2,6 +2,26 @@ var express = require('express');
 var router = express.Router();
 const userLib = require('../backend/lib/userLib');
 /* GET users listing. */
+router.post("/register",(req,res)=>{
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var data = {
+        "username": username,
+        "email" : email,
+        "password" : password,
+    }
+
+    db.collection('users').insertOne(data,(err,collection)=>{
+        if(err){
+            throw err;
+        }
+        console.log("Record Inserted Successfully");
+    });
+
+    return res.redirect("/welcome");
+
+})
 router.post('/login', function(req, res) {
     //var responseJson = {success: true, message: 'Login Failed', user: null };
     userLib.isUserValid(req.body, function(resultJson){

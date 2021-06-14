@@ -9,6 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var config = require('./backend/config/config');
 var MongoStore = require('connect-mongo');
+var mongoose = require('mongoose');
+var db = mongoose.connection;
 require('./backend/lib/dbUsersBootstrap').createUsers();
 
 var app = express();
@@ -27,6 +29,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', usersRouter);
-
-
+app.post("/register",(req,res)=>{
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var data = {
+        "username": username,
+        "email" : email,
+        "password" : password,
+    }
+  
+    db.collection('users').insertOne(data,(err,collection)=>{
+        if(err){
+            throw err;
+        }
+        console.log("Record Inserted Successfully");
+    });
+  
+    return res.redirect("/welcome");
+  
+  })
+  app.get("/welcome", function(req,res){
+    const fullFilePath = __dirname + "/public/welcome.html";
+    res.sendFile(fullFilePath);
+})
 module.exports = app;
