@@ -4,52 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
-  <title>Onscreen Companion</title>
+
+  <title>Document</title>
   <style>
-    body, html {
-            height: 100%;
-            margin: 0;
+    html {
+        height: 100%;  
+        }
+    body{
+        /* background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89)); */
+        background-image:  url(./images/1.jpg);
+        background-size: 100%;
     }
-    * {
-        box-sizing: border-box;
-    }
-    .bg-image {
-            background-image: url(./images/1.jpg);
-            filter: blur(5px);
-            -webkit-filter: blur(1px);
-            height: 100%; 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-    }
-    .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  padding: 30px;
-  text-align: center;
-}
     h1{
       font-size: 5em;
       margin: 0;
       /* padding: 150px; */
-      padding-left: 2em;
+      padding-left: 3.5em;
       padding-top: 1em;
       text-align: center;
       font-family: "Brush Script MT","sans-serif";
       position:absolute;
-      color:whitesmoke;
+      color: whitesmoke;
     }
-
     .button {
       background-color:rgb(29, 28, 28); 
       border: none;
@@ -68,20 +44,18 @@
           font-size: 2em;
           font-weight: bolder;
           font-style: italic;
-          padding-left: 6em;
+          padding-left: 8em;
           padding-top: 7em;
           position: absolute;
       }
       .choice{
-        padding-left: 0px;
-        padding-top: 22em;
+        padding-left: 35em;
+        padding-top: 25em;
       }
      
   </style>
 </head>
 <body>
-    <div class="bg-image"></div>
-    <div class="bg-text">
     <div>
       <h1>Onscreen Companion</h1>
   </div>
@@ -92,7 +66,6 @@
     <button class="button"> Login</button>
     <button class="button">Register</button>
   </div>
-</div>
 </body>
 <script src="site.js"></script>
 </html>
