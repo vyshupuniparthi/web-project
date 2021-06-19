@@ -4,80 +4,126 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/stylesheets/quartz.min.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" integrity="sha512-6S2HWzVFxruDlZxI3sXOZZ4/eJ8AcxkQH1+JjSe/ONCEqR9L4Ysq5JdT5ipqtzU7WHalNwzwBv+iE51gNHJNqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html {
+        height: 100%;  
+        }
+    body {
+        background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+    }
+    h1{
+      font-size: 5em;
+      margin: 0;
+      /* padding: 150px; */
+      padding-left: 3.5em;
+      padding-top: 1em;
+      text-align: center;
+      font-family: "Brush Script MT","sans-serif";
+      position:absolute;
+      color: whitesmoke;
+    }
+    .button {
+      background-color:rgb(29, 28, 28); 
+      border: none;
+      border-radius: 12px;
+      color: white; 
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      padding: 16px 16px;
+      font-family: "Garamond";
+      font-style: italic;
+      }
+      .button1 {
+            padding-left: 20em;
+            padding-top: 0.5em;
+      }
+      .quotes{
+        color: whitesmoke;
+          font-size: 2em;
+          font-weight: bolder;
+          font-style: italic;
+          padding-left: 8em;
+          padding-top: 7em;
+          position: absolute;
+      }
+      .choice{
+        padding-left: 35em;
+        padding-top: 25em;
+      }
+      .next{
+        background-color:black; 
+      border: none;
+      border-radius: 30px;
+      color: white; 
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      padding: 10px 10px;
+      font-family: "Garamond";
+      font-style: italic;
+
+      }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarColor01" style="font-size: larger; font-weight: bolder">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/api/mailbox">MailBox</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </li>
-          </ul>
-          <div id="notSignedIn">
-            <div class="d-flex">
-              <input class="form-control me-sm-2" type="text" placeholder="Username" id="txtUserName">
-              <input class="form-control me-sm-2" type="password" placeholder="Password" id="txtPassword">
-              <button id="btnLogin" class="btn btn-dark" type="submit">Login</button> &nbsp; &nbsp;
-              <a href="register.html"><button id="btnRegister" class="btn btn-dark" type="submit">Register</button></a>
-            </div>
-        </div>
-          <div id="signedIn">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item dropdown">
-                <a id="welcomeUser" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Welcome user</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a id="lnkLogout" class="dropdown-item" href="#">Logout</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main></main>
-  <footer></footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="/javascripts/site.js"></script>
+  <div>
+      <h1>Onscreen Companion</h1>
+  </div>
+  <div class="quotes">
+  <div id="quoteDisplay">
+    "Nothing is pleasanter than exploring a library."
+ </div>
+ <div class=button1>
+  <button onclick="newQuote()" class="next" >Next</button>
+</div>
+  </div>
+  <div class="choice">
+    <button class="button"> Login</button>
+    <button class="button">Register</button>
+  </div>
 </body>
+<script>
+    var quotes=[
+    "I have always imagined that Paradise will be a kind of a Library.",
+    "When in doubt go to the library.",
+    "Libraries were full of ideas – perhaps the most dangerous and powerful of all weapons.",
+    "To build up a library is to create a life. It’s never just a random collection of books.",
+    "A library is the delivery room for the birth of ideas, a place where history comes to life.",
+    "Shout for libraries. Shout for the young readers who use them.",
+    "Librarians are tour-guides for all of knowledge.",
+    "A great library is one nobody notices because it is always there, and always has what people need.",
+    "Libraries are our friends.",
+    "Having fun isn’t hard when you’ve got a library card.",
+    "A library is a place where you learn what teachers were afraid to teach you.",
+    "The love of libraries, like most loves, must be learned.",
+    "Libraries are the future of reading.",
+    "A library is not a luxury but one of the necessities of life.",
+    "An investment in knowledge pays the best interest",
+    "Change is the end result of all true learning.",
+    "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+    "The roots of education are bitter, but the fruit is sweet.",
+    "The more that you read, the more things you will know, the more that you learn, the more places you’ll go.",
+    "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+    "Education without values, as useful as it is, seems rather to make man a more clever devil.",
+    "The learning process continues until the day you die.",
+    "Education is not the filling of a pail, but the lighting of a fire.",
+    "Develop a passion for learning. If you do, you will never cease to grow.",
+    "Education is not preparation for life; education is life itself",
+    "Education is a better safeguard of liberty than a standing army.",
+    "Educating the mind without educating the heart is no education at all.",
+    "Learning is not compulsory. Neither is survival.",
+    "Wisdom…. comes not from age, but from education and learning.",
+    "Nothing is pleasanter than exploring a library."
+]
+function newQuote(){
+    var randomNumber = Math.floor(Math.random() * (quotes.length));
+    document.getElementById('quoteDisplay').innerHTML=quotes[randomNumber];
+}
+</script>
+
 </html>
