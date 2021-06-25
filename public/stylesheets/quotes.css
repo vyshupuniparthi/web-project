@@ -1,0 +1,18 @@
+.quotes{
+      color:black;
+      font-size: 2em;
+      font-weight: bolder;
+      font-style: italic;
+      padding-left: 7em;
+      padding-top: 7em;
+      position: absolute;
+  }
+  .authors {
+    color:black;
+    font-size: 2em;
+    font-weight: bolder;
+    font-style: italic;
+    padding-left: 30em;
+    padding-top: 9em;
+    position: absolute;
+  }
